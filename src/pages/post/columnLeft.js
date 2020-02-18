@@ -28,7 +28,7 @@ class ColumnLeftComponent extends Component {
         if(item.view_feature === true)
             return (
                     <article style={{ borderBottom: '1px solid #e6e6e6'}}>
-                        <img src={item.thumbnail} width="80px;" alt="" style={{ float: 'left'}}/>
+                        <img src={item.thumbnail} width="100px;" alt="" style={{ float: 'left', marginRight: '20px' }}/>
                         <a href={'/post/' + item.slug } style={{ textDecoration: 'none', color: 'black' }}>{ item.title }</a>
                     </article>
             );
@@ -67,7 +67,7 @@ class ColumnLeftComponent extends Component {
                 <div className="col-md-8">
                 { this.props.postDetail.map(item => {
                     return (
-                        <div className="card mb-3">
+                        <div className="card mb-3" style={{ 'border': '0px'}}>
                             {parse(item.content)}
                         </div>
                     );
@@ -85,12 +85,12 @@ class ColumnLeftComponent extends Component {
                 </div>
                 </div>
                 <div className="col-md-4">
-                    <div className="list-group">
-                        <Link href="#" className="list-group-item list-group-item-action">
-                        <h3>Bài viết xem nhiều</h3>
-                        </Link>
-                        { this.props.posts.map(item => this.getListPostFeature(item))}
-                    </div>
+                  <div className="card">
+                    <div className="card-header">Bài viết xem nhiều</div>
+                    <ul className="list-group list-group-flush">
+                      { this.props.posts.map(item => this.getListPostFeature(item))}
+                    </ul>
+                  </div>
                 </div>
             </div>
         );

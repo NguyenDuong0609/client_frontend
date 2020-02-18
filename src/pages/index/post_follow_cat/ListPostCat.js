@@ -76,7 +76,7 @@ class ListPostCatComponent extends Component {
               </ul>
             </div>
             <div className="col-md-4">
-              <div className="card" style={{ width: '18rem' }}>
+              <div className="card">
                 <div className="card-header">Bài viết nổi bật</div>
                 <ul className="list-group list-group-flush">
                   { this.props.posts.map(post => this.getListPostFeatureSub(post))}
